@@ -1,0 +1,9 @@
+{
+  "name": "angularjs-moving-forward",
+  "version": "1.0.0",
+  "description": "AngularJS and trends.",
+  "author": "Dave Baskin",
+  "license": "MIT",
+  "devDependencies": {
+  }
+}
