@@ -8945,4 +8945,15 @@ pre {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .bespoke-slide > div {
+    text-align: center; }
+  .bespoke-slide h1, .bespoke-slide h2 {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); }
+  .bespoke-slide h1 {
+    font-size: 7rem; }
+  .bespoke-slide h2 {
+    font-size: 3rem; }
