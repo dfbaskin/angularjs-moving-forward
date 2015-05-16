@@ -5,8 +5,10 @@
   "author": "Dave Baskin",
   "license": "MIT",
   "devDependencies": {
-    "jspm": "^0.15.6",
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-sass": "^2.0.1",
+    "jspm": "^0.15.6"
   },
   "jspm": {
     "directories": {
