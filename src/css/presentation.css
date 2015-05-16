@@ -8938,7 +8938,9 @@ pre {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  font-family: 'Vollkorn', serif; }
+  font-family: 'Vollkorn', serif;
+  background: #feffff;
+  background: linear-gradient(to bottom, #feffff 0%, #d2ebf9 100%); }
 
 .bespoke-slide {
   position: absolute;

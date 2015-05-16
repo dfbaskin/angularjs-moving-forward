@@ -37,6 +37,9 @@ pre {
   }
 }
 
+$background-gradient-start: #feffff;
+$background-gradient-end: #d2ebf9;
+
 .bespoke-parent {
   position: absolute;
   top: 0;
@@ -45,6 +48,8 @@ pre {
   bottom: 0;
   overflow: hidden;
   font-family: 'Vollkorn', serif;
+  background: $background-gradient-start;
+  background: linear-gradient(to bottom, $background-gradient-start 0%, $background-gradient-end 100%);
 }
 
 .bespoke-slide {

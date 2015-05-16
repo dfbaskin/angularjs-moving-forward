@@ -23,6 +23,7 @@ System.config({
     "bespoke-classes": "github:markdalgleish/bespoke-classes@1.0.0",
     "bespoke-hash": "github:markdalgleish/bespoke-hash@1.0.2",
     "bespoke-keys": "github:markdalgleish/bespoke-keys@1.0.0",
+    "bespoke-scale": "github:markdalgleish/bespoke-scale@1.0.1",
     "core-js": "npm:core-js@0.9.10",
     "css": "github:systemjs/plugin-css@0.1.10",
     "foundation": "github:zurb/bower-foundation@5.5.2",
