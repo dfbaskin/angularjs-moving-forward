@@ -12,3 +12,5 @@ This project uses the following libraries:
 - libsass - for compiling SASS to CSS
 - express - to run the web application
 - highlightjs - for code syntax highlighting.
+- google fonts
+- animate.css
