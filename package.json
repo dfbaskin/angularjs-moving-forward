@@ -15,6 +15,7 @@
       "baseURL": "src"
     },
     "dependencies": {
+      "animate": "github:daneden/animate.css@^3.2.6",
       "bespoke": "github:markdalgleish/bespoke.js@^1.0.0",
       "bespoke-bullets": "github:markdalgleish/bespoke-bullets@^1.1.0",
       "bespoke-classes": "github:markdalgleish/bespoke-classes@^1.0.0",

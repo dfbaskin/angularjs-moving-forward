@@ -15,6 +15,7 @@ System.config({
 
 System.config({
   "map": {
+    "animate": "github:daneden/animate.css@3.2.6",
     "babel": "npm:babel-core@5.4.3",
     "babel-runtime": "npm:babel-runtime@5.4.3",
     "bespoke": "github:markdalgleish/bespoke.js@1.0.0",

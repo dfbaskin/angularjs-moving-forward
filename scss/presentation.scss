@@ -1,6 +1,7 @@
 
 @import 'normalize';
 @import 'foundation';
+@import 'animate';
 
 pre.hljs-pre {
   padding: 0;
@@ -19,7 +20,17 @@ pre {
   }
 }
 
+.bespoke-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
 .bespoke-slide {
+  @extend .animated;
   position: absolute;
   top: 0;
   left: 0;
@@ -28,9 +39,9 @@ pre {
 }
 
 .bespoke-active {
-  opacity: 1.0;
+  @extend .fadeInLeft;
 }
 
 .bespoke-inactive {
-  opacity: 0.0;
+  @extend .fadeOutDown;
 }
