@@ -3,6 +3,23 @@
 @import 'foundation';
 @import 'animate';
 
+
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(/fonts/Vollkorn-Normal-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Vollkorn Bold'), local('Vollkorn-Bold'), url(/fonts/Vollkorn-Bold-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 pre.hljs-pre {
   padding: 0;
 }
@@ -27,6 +44,7 @@ pre {
   right: 0;
   bottom: 0;
   overflow: hidden;
+  font-family: 'Vollkorn', serif;
 }
 
 .bespoke-slide {
