@@ -18,3 +18,19 @@ pre {
     border: none;
   }
 }
+
+.bespoke-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bespoke-active {
+  opacity: 1.0;
+}
+
+.bespoke-inactive {
+  opacity: 0.0;
+}
