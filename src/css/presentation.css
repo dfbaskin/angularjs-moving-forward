@@ -6636,5 +6636,17 @@ th.hide-for-touch {
   .show-for-print {
     display: none !important; } }
 
-body {
-  border: 5px dotted red; }
+pre.hljs-pre {
+  padding: 0; }
+
+pre {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-weight: normal;
+  color: #333333;
+  background-color: #f8f8f8;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dfdfdf;
+  padding: 0 1rem; }
+  pre > code {
+    border: none; }

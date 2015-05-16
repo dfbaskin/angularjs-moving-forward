@@ -1,3 +1,5 @@
 
-console.log("yep");
+import initializeCodeFormatting from './codeFormatting';
+
+initializeCodeFormatting();
 

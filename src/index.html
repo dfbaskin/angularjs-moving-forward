@@ -13,7 +13,23 @@
         One
     </section>
     <section>
-        Two
+<pre><code class="lang-javascript">
+System.config({
+  "baseURL": "/",
+  "transpiler": "babel",
+  "babelOptions": {
+    "optional": [
+      "runtime"
+    ]
+  },
+  "paths": {
+    "*": "*.js",
+    "github:*": "jspm_packages/github/*.js",
+    "npm:*": "jspm_packages/npm/*.js"
+  }
+});
+
+</code></pre>
     </section>
     <section>
         Three

@@ -15,7 +15,9 @@
       "baseURL": "src"
     },
     "dependencies": {
-      "foundation": "github:zurb/bower-foundation@^5.5.2"
+      "css": "github:systemjs/plugin-css@^0.1.10",
+      "foundation": "github:zurb/bower-foundation@^5.5.2",
+      "highlightjs": "github:components/highlightjs@^8.5.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
