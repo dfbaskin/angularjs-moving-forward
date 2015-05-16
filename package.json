@@ -5,19 +5,20 @@
   "author": "Dave Baskin",
   "license": "MIT",
   "devDependencies": {
-    "jspm": "^0.15.6"
+    "jspm": "^0.15.6",
+    "express": "^4.12.3"
   },
   "jspm": {
     "directories": {
       "baseURL": "src"
+    },
+    "dependencies": {
+      "foundation": "github:zurb/bower-foundation@^5.5.2"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
       "babel-runtime": "npm:babel-runtime@^5.1.13",
       "core-js": "npm:core-js@^0.9.4"
     }
-  },
-  "dependencies": {
-    "express": "^4.12.3"
   }
 }

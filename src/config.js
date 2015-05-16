@@ -18,6 +18,7 @@ System.config({
     "babel": "npm:babel-core@5.4.3",
     "babel-runtime": "npm:babel-runtime@5.4.3",
     "core-js": "npm:core-js@0.9.10",
+    "foundation": "github:zurb/bower-foundation@5.5.2",
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
     },
