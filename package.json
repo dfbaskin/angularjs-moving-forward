@@ -23,6 +23,7 @@
       "bespoke-keys": "github:markdalgleish/bespoke-keys@^1.0.0",
       "bespoke-scale": "github:markdalgleish/bespoke-scale@^1.0.1",
       "css": "github:systemjs/plugin-css@^0.1.10",
+      "font-awesome": "npm:font-awesome@^4.3.0",
       "foundation": "github:zurb/bower-foundation@^5.5.2",
       "highlightjs": "github:components/highlightjs@^8.5.0"
     },

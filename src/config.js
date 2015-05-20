@@ -26,6 +26,7 @@ System.config({
     "bespoke-scale": "github:markdalgleish/bespoke-scale@1.0.1",
     "core-js": "npm:core-js@0.9.10",
     "css": "github:systemjs/plugin-css@0.1.10",
+    "font-awesome": "npm:font-awesome@4.3.0",
     "foundation": "github:zurb/bower-foundation@5.5.2",
     "highlightjs": "github:components/highlightjs@8.5.0",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -112,6 +113,9 @@ System.config({
     },
     "npm:events-browserify@0.0.1": {
       "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:font-awesome@4.3.0": {
+      "css": "github:systemjs/plugin-css@0.1.10"
     },
     "npm:https-browserify@0.0.0": {
       "http": "github:jspm/nodelibs-http@1.7.1"
