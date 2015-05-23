@@ -63,12 +63,76 @@
 
     <section>
         <div>
-            <div>
-                <ul>
-                    <li class="bullet">ECMAScript 6 (ES6)</li>
-                    <li class="bullet">Standards: Modules and Promises</li>
-                    <li class="bullet">Web Components</li>
-                </ul>
+            <ul>
+                <li class="bullet">ECMAScript 6 (ES6)</li>
+                <li class="bullet">Standards: Modules and Promises</li>
+                <li class="bullet">Web Components</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="side-by-side">
+            <div class="row">
+                <div class="large-12 columns">
+                    <h2>Animations</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-7 columns">
+                    <ul class="tabs" data-tab>
+                        <li class="tab-title active"><a href="#no-animation-1">HTML</a></li>
+                        <li class="tab-title"><a href="#no-animation-2">Script</a></li>
+                    </ul>
+
+<div class="tabs-content">
+<div class="content active" id="no-animation-1">
+<pre><code class="html">&lt;div ng-controller=&quot;exampleCtrl as vm&quot;&gt;
+ &lt;div&gt;
+  &lt;input type=&quot;text&quot;
+    ng-model=&quot;vm.newItem&quot;
+    ng-keypress=&quot;($event.which === 13) &amp;amp;&amp;amp; vm.addItem(vm.newItem)&quot; /&gt;
+  &lt;button type=&quot;button&quot;
+    ng-click=&quot;vm.addItem(vm.newItem)&quot;&gt;Add&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;ol&gt;
+      &lt;li ng-repeat=&quot;item in vm.items&quot;&gt;
+        &lt;button type=&quot;button&quot;
+          ng-click=&quot;vm.removeItem(item)&quot;&gt;x&lt;/button&gt;
+          {{item}}
+        &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<div class="content active" id="no-animation-2">
+<pre><code class="javascript">class ExampleCtrl {
+
+  constructor() {
+    this.items = ["One", "Two", "Three"];
+    this.newItem = "Four";
+  }
+
+  addItem(item) {
+    this.items.push(item);
+    this.newItem = "";
+  }
+
+  removeItem(item) {
+    var idx = this.items.indexOf(item);
+    if(idx !== -1) {
+      this.items.splice(idx, 1);
+    }
+  }
+}
+</code></pre>
+</div>
+</div>
+                </div>
+                <div class="large-5 columns">
+                    <iframe src="examples/animation/without-animation.html"></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -78,7 +142,17 @@
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 <script>
-    System.import('app/main');
+    Promise.all([
+        System.import('foundation/js/vendor/jquery'),
+        System.import('foundation/js/foundation'),
+        System.import('app/main')
+    ]).then(function(modules) {
+        var $ = modules[0];
+        $(document).foundation();
+    }).catch(function(err) {
+        console.log("System load error:");
+        console.log(err);
+    });
 </script>
 
 </body>

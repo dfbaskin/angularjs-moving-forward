@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Javascript Animation</title>
+</head>
+<body>
+
+    <div ng-controller="exampleCtrl as vm">
+
+        <div>
+            <input type="text" ng-model="vm.newItem" ng-keypress="($event.which === 13) &amp;&amp; vm.addItem(vm.newItem)" />
+            <button type="button" ng-click="vm.addItem(vm.newItem)">Add</button>
+        </div>
+
+        <div>
+            <ol>
+                <li ng-repeat="item in vm.items">
+                    <button type="button" ng-click="vm.removeItem(item)">x</button>
+                    {{item}}
+                </li>
+            </ol>
+        </div>
+
+    </div>
+
+<script src="/jspm_packages/system.js"></script>
+<script src="/config.js"></script>
+<script>
+    System.import('examples/animation/animation');
+</script>
+
+</body>
+</html>
