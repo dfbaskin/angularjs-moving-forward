@@ -6642,29 +6642,31 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 Copyright (c) 2015 Daniel Eden
 */
-.animated, .bespoke-slide {
+.animated, .bespoke-slide, .bespoke-bullet {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
 
-.animated.infinite, .infinite.bespoke-slide {
+.animated.infinite, .infinite.bespoke-slide, .infinite.bespoke-bullet {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
 
-.animated.hinge, .hinge.bespoke-slide {
+.animated.hinge, .hinge.bespoke-slide, .hinge.bespoke-bullet {
   -webkit-animation-duration: 2s;
   animation-duration: 2s; }
 
 .animated.bounceIn,
 .bounceIn.bespoke-slide,
-.animated.bounceOut, .bounceOut.bespoke-slide {
+.bounceIn.bespoke-bullet,
+.animated.bounceOut, .bounceOut.bespoke-slide, .bounceOut.bespoke-bullet {
   -webkit-animation-duration: .75s;
   animation-duration: .75s; }
 
 .animated.flipOutX,
 .flipOutX.bespoke-slide,
-.animated.flipOutY, .flipOutY.bespoke-slide {
+.flipOutX.bespoke-bullet,
+.animated.flipOutY, .flipOutY.bespoke-slide, .flipOutY.bespoke-bullet {
   -webkit-animation-duration: .75s;
   animation-duration: .75s; }
 
@@ -7360,7 +7362,7 @@ Copyright (c) 2015 Daniel Eden
   100% {
     opacity: 1; } }
 
-.fadeIn {
+.fadeIn, .bespoke-bullet-active {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn; }
 
@@ -7786,7 +7788,7 @@ Copyright (c) 2015 Daniel Eden
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in; } }
 
-.animated.flip, .flip.bespoke-slide {
+.animated.flip, .flip.bespoke-slide, .flip.bespoke-bullet {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
   -webkit-animation-name: flip;
@@ -8959,3 +8961,11 @@ pre {
     font-size: 7rem; }
   .bespoke-slide h2 {
     font-size: 3rem; }
+  .bespoke-slide ul {
+    list-style: none;
+    margin-top: 2rem; }
+  .bespoke-slide li.bullet {
+    font-size: 2rem; }
+
+.bespoke-bullet-inactive {
+  opacity: 0; }

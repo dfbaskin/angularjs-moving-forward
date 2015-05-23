@@ -75,6 +75,14 @@ $background-gradient-end: #d2ebf9;
   h2 {
     font-size: 3rem;
   }
+
+  ul {
+    list-style: none;
+    margin-top: 2rem;
+  }
+  li.bullet {
+    font-size: 2rem;
+  }
 }
 
 .bespoke-active {
@@ -83,4 +91,16 @@ $background-gradient-end: #d2ebf9;
 
 .bespoke-inactive {
   @extend .fadeOutDown;
+}
+
+.bespoke-bullet {
+  @extend .animated;
+}
+
+.bespoke-bullet-active {
+  @extend .fadeIn;
+}
+
+.bespoke-bullet-inactive {
+  opacity: 0;
 }
