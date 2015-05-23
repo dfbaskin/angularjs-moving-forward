@@ -1,0 +1,22 @@
+
+.my-items.ng-enter, .my-items.ng-move {
+    transition: 0.75s linear all;
+    padding-left: 80px;
+    opacity: 0;
+}
+
+.my-items.ng-enter.ng-enter-active,
+.my-items.ng-move.ng-move-active {
+    padding-left: 0;
+    opacity: 1;
+}
+
+.my-items.ng-leave {
+    transition: 0.75s linear all;
+    padding-left: 0;
+    opacity: 1;
+}
+.my-items.ng-leave.ng-leave-active {
+    opacity: 0;
+    padding-left: 80px;
+}

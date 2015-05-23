@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Javascript Animation</title>
+    <link rel="stylesheet" href="animation.css">
 </head>
 <body>
 
@@ -15,7 +16,7 @@
 
         <div>
             <ol>
-                <li ng-repeat="item in vm.items track by item.id">
+                <li ng-repeat="item in vm.items track by item.id" class="my-items">
                     <button type="button" ng-click="vm.removeItem(item)">x</button>
                     {{item.text}}
                 </li>
@@ -27,7 +28,7 @@
 <script src="/jspm_packages/system.js"></script>
 <script src="/config.js"></script>
 <script>
-    System.import('examples/animation/without-animation');
+    System.import('examples/animation/with-animation');
 </script>
 
 </body>

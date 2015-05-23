@@ -127,6 +127,7 @@ body {
 
 .bespoke-active {
   @extend .fadeIn;
+  z-index: 100;
 }
 
 .bespoke-inactive {

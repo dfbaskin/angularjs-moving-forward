@@ -84,34 +84,115 @@
 <div class="tabs-content">
 <div class="content active" id="no-animation-1">
 <pre><code class="html">&lt;div ng-controller=&quot;exampleCtrl as vm&quot;&gt;
- &lt;div&gt;
-  &lt;input type=&quot;text&quot;
-    ng-model=&quot;vm.newItem&quot;
-    ng-keypress=&quot;($event.which === 13) &amp;amp;&amp;amp; vm.addItem(vm.newItem)&quot; /&gt;
-  &lt;button type=&quot;button&quot;
-    ng-click=&quot;vm.addItem(vm.newItem)&quot;&gt;Add&lt;/button&gt;
-  &lt;/div&gt;
+
   &lt;div&gt;
-    &lt;ol&gt;
-      &lt;li ng-repeat=&quot;item in vm.items&quot;&gt;
-        &lt;button type=&quot;button&quot;
-          ng-click=&quot;vm.removeItem(item)&quot;&gt;x&lt;/button&gt;
-          {{item}}
-        &lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;input type=&quot;text&quot;
+      ng-model=&quot;vm.newItem&quot;
+      ng-keypress=&quot;($event.which === 13) &amp;amp;&amp;amp; vm.addItem(vm.newItem)&quot; /&gt;
+    &lt;button type=&quot;button&quot;
+      ng-click=&quot;vm.addItem(vm.newItem)&quot;&gt;Add&lt;/button&gt;
   &lt;/div&gt;
+
+  &lt;div&gt;
+     &lt;ol&gt;
+       &lt;li ng-repeat=&quot;item in vm.items track by item.id&quot;&gt;
+         &lt;button type=&quot;button&quot;
+           ng-click=&quot;vm.removeItem(item)&quot;&gt;x&lt;/button&gt;
+           {{item.text}}
+       &lt;/li&gt;
+     &lt;/ol&gt;
+  &lt;/div&gt;
+
 &lt;/div&gt;</code></pre>
 </div>
 <div class="content" id="no-animation-2">
 <pre><code class="javascript">class ExampleCtrl {
 
   constructor() {
-    this.items = ["One", "Two", "Three"];
-    this.newItem = "Four";
+    this.nextItemId = 0;
+    this.items = [];
+    ["one", "two", "three"].forEach(item => this.addItem(item));
   }
 
-  addItem(item) {
-    this.items.push(item);
+  addItem(text) {
+    this.items.push({
+      id: this.nextItemId += 1,
+      text: text,
+    });
+    this.newItem = "";
+  }
+
+  removeItem(item) {
+    var idx = this.items.indexOf(item);
+    if(idx !== -1) {
+      this.items.splice(idx, 1);
+    }
+  }
+}</code></pre>
+</div>
+</div>
+
+            </div>
+            <div class="source-right">
+                <iframe src="examples/animation/without-animation.html"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="flex-title">
+            <h2>Animations</h2>
+        </div>
+        <div class="source-view">
+            <div class="source-left">
+                <ul class="tabs" data-tab>
+                    <li class="tab-title active"><a href="#animation-1">HTML</a></li>
+                    <li class="tab-title"><a href="#animation-2">Script</a></li>
+                    <li class="tab-title"><a href="#animation-3">CSS</a></li>
+                </ul>
+
+<div class="tabs-content">
+
+<div class="content active" id="animation-1">
+<pre><code class="html">&lt;div ng-controller=&quot;exampleCtrl as vm&quot;&gt;
+
+  &lt;div&gt;
+    &lt;input type=&quot;text&quot;
+        ng-model=&quot;vm.newItem&quot;
+        ng-keypress=&quot;($event.which === 13) &amp;amp;&amp;amp; vm.addItem(vm.newItem)&quot; /&gt;
+    &lt;button type=&quot;button&quot;
+        ng-click=&quot;vm.addItem(vm.newItem)&quot;&gt;Add&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;ol&gt;
+      &lt;li ng-repeat=&quot;item in vm.items track by item.id&quot;
+            class=&quot;my-items&quot;&gt;
+        &lt;button type=&quot;button&quot;
+          ng-click=&quot;vm.removeItem(item)&quot;&gt;x&lt;/button&gt;
+          {{item.text}}
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<div class="content" id="animation-2">
+<pre><code class="javascript">class ExampleCtrl {
+
+  constructor() {
+    this.nextItemId = 0;
+    this.items = [];
+    ["one", "two", "three"].forEach(item => this.addItem(item));
+  }
+
+  addItem(text) {
+    this.items.push({
+      id: this.nextItemId += 1,
+      text: text,
+    });
     this.newItem = "";
   }
 
@@ -122,13 +203,38 @@
     }
   }
 }
-</code></pre>
+
+angular.module('exampleApp', ['ngAnimate'])</code></pre>
+</div>
+
+<div class="content" id="animation-3">
+<pre><code class="css">.my-items.ng-enter, .my-items.ng-move {
+    transition: 0.75s linear all;
+    padding-left: 80px;
+    opacity: 0;
+}
+
+.my-items.ng-enter.ng-enter-active,
+.my-items.ng-move.ng-move-active {
+    padding-left: 0;
+    opacity: 1;
+}
+
+.my-items.ng-leave {
+    transition: 0.75s linear all;
+    padding-left: 0;
+    opacity: 1;
+}
+.my-items.ng-leave.ng-leave-active {
+    opacity: 0;
+    padding-left: 80px;
+}</code></pre>
 </div>
 </div>
 
             </div>
             <div class="source-right">
-                <iframe src="examples/animation/without-animation.html"></iframe>
+                <iframe src="examples/animation/with-animation.html"></iframe>
             </div>
         </div>
     </section>

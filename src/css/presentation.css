@@ -8991,5 +8991,8 @@ body > article.bespoke-parent {
       border: none;
       padding: 2rem; }
 
+.bespoke-active {
+  z-index: 100; }
+
 .bespoke-bullet-inactive {
   opacity: 0; }

@@ -1,15 +1,20 @@
 
 import angular from 'angular';
+import ngAnimate from 'angular-animate';
 
 class ExampleCtrl {
 
     constructor() {
-        this.items = ["One", "Two", "Three"];
-        this.newItem = "Four";
+        this.nextItemId = 0;
+        this.items = [];
+        ["one", "two", "three"].forEach(item => this.addItem(item));
     }
 
-    addItem(item) {
-        this.items.push(item);
+    addItem(text) {
+        this.items.push({
+            id: this.nextItemId += 1,
+            text: text,
+        });
         this.newItem = "";
     }
 
@@ -22,7 +27,7 @@ class ExampleCtrl {
 }
 
 angular
-    .module('exampleApp', [])
+    .module('exampleApp', ['ngAnimate'])
     .controller('exampleCtrl', [
         ExampleCtrl
     ]);

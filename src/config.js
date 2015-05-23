@@ -16,6 +16,7 @@ System.config({
 System.config({
   "map": {
     "angular": "github:angular/bower-angular@1.3.15",
+    "angular-animate": "github:angular/bower-angular-animate@1.3.15",
     "animate": "github:daneden/animate.css@3.2.6",
     "babel": "npm:babel-core@5.4.3",
     "babel-runtime": "npm:babel-runtime@5.4.3",
@@ -30,6 +31,9 @@ System.config({
     "font-awesome": "npm:font-awesome@4.3.0",
     "foundation": "github:zurb/bower-foundation@5.5.2",
     "highlightjs": "github:components/highlightjs@8.5.0",
+    "github:angular/bower-angular-animate@1.3.15": {
+      "angular": "github:angular/bower-angular@1.3.15"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
