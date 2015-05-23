@@ -10,7 +10,7 @@ class Presentation {
 
     constructor() {
         this.deck = bespoke.from('article', [
-            bespokeScale('zoom'),
+            //bespokeScale('zoom'),
             bespokeClasses(),
             bespokeKeys(),
             bespokeHash(),

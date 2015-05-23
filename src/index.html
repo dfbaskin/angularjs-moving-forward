@@ -12,7 +12,7 @@
 
     <!-- Title Page -->
     <section>
-        <div>
+        <div class="text-center">
             <div>
                 <img src="img/angular-js.png" />
             </div>
@@ -29,8 +29,8 @@
     </section>
 
     <section>
-        <div>
-            <h2>State of Things</h2>
+        <div class="text-center">
+            <h2><img src="img/angular-js.png" /> State of Things</h2>
             <div class="bullet">
                 <ul>
                     <li class="bullet">Started in 2009</li>
@@ -42,8 +42,8 @@
     </section>
 
     <section>
-        <div>
-            <h2>State of Things</h2>
+        <div class="text-center">
+            <h2><img src="img/angular-js.png" /> State of Things</h2>
             <div>
                 <ul>
                     <li class="bullet">Now Widely Used</li>
@@ -55,14 +55,13 @@
     </section>
 
     <section>
-        <div>
+        <div class="text-center">
             <h1 class="bullet">But ...</h1>
-            <h2 class="bullet">Things move forward</h2>
         </div>
     </section>
 
     <section>
-        <div>
+        <div class="text-center">
             <ul>
                 <li class="bullet">ECMAScript 6 (ES6)</li>
                 <li class="bullet">Standards: Modules and Promises</li>
@@ -72,18 +71,15 @@
     </section>
 
     <section>
-        <div class="side-by-side">
-            <div class="row">
-                <div class="large-12 columns">
-                    <h2>Animations</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-7 columns">
-                    <ul class="tabs" data-tab>
-                        <li class="tab-title active"><a href="#no-animation-1">HTML</a></li>
-                        <li class="tab-title"><a href="#no-animation-2">Script</a></li>
-                    </ul>
+        <div class="flex-title">
+            <h2>Animations</h2>
+        </div>
+        <div class="source-view">
+            <div class="source-left">
+                <ul class="tabs" data-tab>
+                    <li class="tab-title active"><a href="#no-animation-1">HTML</a></li>
+                    <li class="tab-title"><a href="#no-animation-2">Script</a></li>
+                </ul>
 
 <div class="tabs-content">
 <div class="content active" id="no-animation-1">
@@ -106,7 +102,7 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
-<div class="content active" id="no-animation-2">
+<div class="content" id="no-animation-2">
 <pre><code class="javascript">class ExampleCtrl {
 
   constructor() {
@@ -129,10 +125,10 @@
 </code></pre>
 </div>
 </div>
-                </div>
-                <div class="large-5 columns">
-                    <iframe src="examples/animation/without-animation.html"></iframe>
-                </div>
+
+            </div>
+            <div class="source-right">
+                <iframe src="examples/animation/without-animation.html"></iframe>
             </div>
         </div>
     </section>
@@ -142,14 +138,7 @@
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 <script>
-    Promise.all([
-        System.import('foundation/js/vendor/jquery'),
-        System.import('foundation/js/foundation'),
-        System.import('app/main')
-    ]).then(function(modules) {
-        var $ = modules[0];
-        $(document).foundation();
-    }).catch(function(err) {
+    System.import('app/main').catch(function(err) {
         console.log("System load error:");
         console.log(err);
     });

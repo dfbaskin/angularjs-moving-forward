@@ -3,6 +3,8 @@
 @import 'foundation';
 @import 'animate';
 
+$background-gradient-start: #feffff;
+$background-gradient-end: #d2ebf9;
 
 @font-face {
   font-family: 'Vollkorn';
@@ -20,26 +22,14 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-pre.hljs-pre {
-  padding: 0;
-}
-pre {
-  font-family: $code-font-family;
-  font-weight: $code-font-weight;
-  color: $code-color;
-  background-color: $code-background-color;
-  border-width: $code-border-size;
-  border-style: $code-border-style;
-  border-color: $code-border-color;
-  padding: 0 1.0rem;
-  > code {
-    border: none;
-    text-align: left;
+body {
+  > article {
+    opacity: 0.10;
+  }
+  > article.bespoke-parent {
+    opacity: 1.0;
   }
 }
-
-$background-gradient-start: #feffff;
-$background-gradient-end: #d2ebf9;
 
 .bespoke-parent {
   position: absolute;
@@ -61,12 +51,11 @@ $background-gradient-end: #d2ebf9;
   right: 0;
   bottom: 0;
   display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  > div {
-    text-align: center;
-  }
   h1, h2 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
   }
@@ -76,7 +65,6 @@ $background-gradient-end: #d2ebf9;
   h2 {
     font-size: 3rem;
   }
-
   ul {
     list-style: none;
     margin-top: 2rem;
@@ -85,41 +73,64 @@ $background-gradient-end: #d2ebf9;
     font-size: 2rem;
   }
 
-  .side-by-side {
-    width: 1000rem;
-
-    ul.tabs {
-      margin-top: 0;
-    }
-
-    div.tabs-content {
-      margin: 0;
-      div.content {
-        padding: 0;
+  ul.tabs {
+    padding: 0 0 1rem 0;
+    li.tab-title {
+      > a {
+        padding: 4px 20px;
       }
     }
+  }
 
-    > div:nth-of-type(2) {
-      .large-5, .large-7 {
-        height: 30rem;
-        padding: 1rem;
+  div.content {
+    padding: 0;
+    pre {
+      > code {
+        padding: 2rem;
       }
     }
+  }
+
+  .flex-title {
+    width: 90%;
+    text-align: center;
+  }
+
+  .source-view {
+    width: 90%;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+  }
+  .source-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 65%;
+    height: 100%;
+  }
+  .source-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35%;
+    height: 100%;
 
     iframe {
       width: 100%;
       height: 100%;
       border: none;
+      padding: 2rem;
     }
   }
 }
 
 .bespoke-active {
-  @extend .fadeInLeft;
+  @extend .fadeIn;
 }
 
 .bespoke-inactive {
-  @extend .fadeOutDown;
+  @extend .fadeOut;
 }
 
 .bespoke-bullet {

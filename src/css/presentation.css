@@ -7362,7 +7362,7 @@ Copyright (c) 2015 Daniel Eden
   100% {
     opacity: 1; } }
 
-.fadeIn, .bespoke-bullet-active {
+.fadeIn, .bespoke-active, .bespoke-bullet-active {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn; }
 
@@ -7434,7 +7434,7 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: none;
     transform: none; } }
 
-.fadeInLeft, .bespoke-active {
+.fadeInLeft {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft; }
 
@@ -7570,7 +7570,7 @@ Copyright (c) 2015 Daniel Eden
   100% {
     opacity: 0; } }
 
-.fadeOut {
+.fadeOut, .bespoke-inactive {
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut; }
 
@@ -7590,7 +7590,7 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0); } }
 
-.fadeOutDown, .bespoke-inactive {
+.fadeOutDown {
   -webkit-animation-name: fadeOutDown;
   animation-name: fadeOutDown; }
 
@@ -8918,21 +8918,11 @@ Copyright (c) 2015 Daniel Eden
   src: local("Vollkorn Bold"), local("Vollkorn-Bold"), url(/fonts/Vollkorn-Bold-700.woff2) format("woff2");
   unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000; }
 
-pre.hljs-pre {
-  padding: 0; }
+body > article {
+  opacity: 0.10; }
 
-pre {
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: normal;
-  color: #333333;
-  background-color: #f8f8f8;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #dfdfdf;
-  padding: 0 1rem; }
-  pre > code {
-    border: none;
-    text-align: left; }
+body > article.bespoke-parent {
+  opacity: 1.0; }
 
 .bespoke-parent {
   position: absolute;
@@ -8952,10 +8942,10 @@ pre {
   right: 0;
   bottom: 0;
   display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center; }
-  .bespoke-slide > div {
-    text-align: center; }
   .bespoke-slide h1, .bespoke-slide h2 {
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); }
   .bespoke-slide h1 {
@@ -8967,21 +8957,39 @@ pre {
     margin-top: 2rem; }
   .bespoke-slide li.bullet {
     font-size: 2rem; }
-  .bespoke-slide .side-by-side {
-    width: 1000rem; }
-    .bespoke-slide .side-by-side ul.tabs {
-      margin-top: 0; }
-    .bespoke-slide .side-by-side div.tabs-content {
-      margin: 0; }
-      .bespoke-slide .side-by-side div.tabs-content div.content {
-        padding: 0; }
-    .bespoke-slide .side-by-side > div:nth-of-type(2) .large-5, .bespoke-slide .side-by-side > div:nth-of-type(2) .large-7 {
-      height: 30rem;
-      padding: 1rem; }
-    .bespoke-slide .side-by-side iframe {
+  .bespoke-slide ul.tabs {
+    padding: 0 0 1rem 0; }
+    .bespoke-slide ul.tabs li.tab-title > a {
+      padding: 4px 20px; }
+  .bespoke-slide div.content {
+    padding: 0; }
+    .bespoke-slide div.content pre > code {
+      padding: 2rem; }
+  .bespoke-slide .flex-title {
+    width: 90%;
+    text-align: center; }
+  .bespoke-slide .source-view {
+    width: 90%;
+    height: 80%;
+    position: relative;
+    overflow: hidden; }
+  .bespoke-slide .source-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 65%;
+    height: 100%; }
+  .bespoke-slide .source-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35%;
+    height: 100%; }
+    .bespoke-slide .source-right iframe {
       width: 100%;
       height: 100%;
-      border: none; }
+      border: none;
+      padding: 2rem; }
 
 .bespoke-bullet-inactive {
   opacity: 0; }
