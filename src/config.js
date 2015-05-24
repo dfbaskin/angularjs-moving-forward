@@ -17,6 +17,8 @@ System.config({
   "map": {
     "angular": "github:angular/bower-angular@1.3.15",
     "angular-animate": "github:angular/bower-angular-animate@1.3.15",
+    "angular-aria": "github:angular/bower-angular-aria@1.3.15",
+    "angular-material": "github:angular/bower-material@0.9.4",
     "animate": "github:daneden/animate.css@3.2.6",
     "babel": "npm:babel-core@5.4.3",
     "babel-runtime": "npm:babel-runtime@5.4.3",
@@ -27,12 +29,21 @@ System.config({
     "bespoke-keys": "github:markdalgleish/bespoke-keys@1.0.0",
     "bespoke-scale": "github:markdalgleish/bespoke-scale@1.0.1",
     "core-js": "npm:core-js@0.9.10",
-    "css": "github:systemjs/plugin-css@0.1.10",
+    "css": "github:systemjs/plugin-css@0.1.11",
     "font-awesome": "npm:font-awesome@4.3.0",
     "foundation": "github:zurb/bower-foundation@5.5.2",
     "highlightjs": "github:components/highlightjs@8.5.0",
     "github:angular/bower-angular-animate@1.3.15": {
       "angular": "github:angular/bower-angular@1.3.15"
+    },
+    "github:angular/bower-angular-aria@1.3.15": {
+      "angular": "github:angular/bower-angular@1.3.15"
+    },
+    "github:angular/bower-material@0.9.4": {
+      "angular": "github:angular/bower-angular@1.3.15",
+      "angular-animate": "github:angular/bower-angular-animate@1.3.15",
+      "angular-aria": "github:angular/bower-angular-aria@1.3.15",
+      "css": "github:systemjs/plugin-css@0.1.11"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -72,7 +83,7 @@ System.config({
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
     },
-    "github:systemjs/plugin-css@0.1.10": {
+    "github:systemjs/plugin-css@0.1.11": {
       "clean-css": "npm:clean-css@3.1.9",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0"
@@ -120,7 +131,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:font-awesome@4.3.0": {
-      "css": "github:systemjs/plugin-css@0.1.10"
+      "css": "github:systemjs/plugin-css@0.1.11"
     },
     "npm:https-browserify@0.0.0": {
       "http": "github:jspm/nodelibs-http@1.7.1"

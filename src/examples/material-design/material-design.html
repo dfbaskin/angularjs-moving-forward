@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Material Design Example</title>
+</head>
+<body>
+
+    <div ng-controller="exampleCtrl as vm">
+
+        <md-content layout-padding>
+            <md-input-container>
+                <label>Add Item</label>
+                <input type="text" ng-model="vm.newItem" ng-keypress="($event.which === 13) &amp;&amp; vm.addItem(vm.newItem)" />
+            </md-input-container>
+        </md-content>
+
+        <md-content layout-padding>
+            <md-list>
+                <md-list-item ng-repeat="item in vm.items track by item.id">
+                    <md-button aria-label="Remove item" ng-click="vm.removeItem(item)">
+                        <md-icon md-svg-icon="delete"></md-icon>
+                    </md-button>
+                    <p>{{ item.text }}</p>
+                </md-list-item>
+            </md-list>
+        </md-content>
+
+    </div>
+
+<script src="/jspm_packages/system.js"></script>
+<script src="/config.js"></script>
+<script>
+    System.import('examples/material-design/material-design');
+</script>
+
+</body>
+</html>
