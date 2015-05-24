@@ -18,10 +18,10 @@
         <md-content layout-padding>
             <md-list>
                 <md-list-item ng-repeat="item in vm.items track by item.id">
-                    <md-button aria-label="Remove item" ng-click="vm.removeItem(item)">
+                    <p>{{ item.text }}</p>
+                    <md-button class="md-secondary" aria-label="Remove item" ng-click="vm.removeItem(item)">
                         <md-icon md-svg-icon="delete"></md-icon>
                     </md-button>
-                    <p>{{ item.text }}</p>
                 </md-list-item>
             </md-list>
         </md-content>
