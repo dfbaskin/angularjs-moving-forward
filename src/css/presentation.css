@@ -8918,6 +8918,106 @@ Copyright (c) 2015 Daniel Eden
   src: local("Vollkorn Bold"), local("Vollkorn-Bold"), url(/fonts/Vollkorn-Bold-700.woff2) format("woff2");
   unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000; }
 
+@media (min-height: 50px) {
+  div.content pre > code {
+    height: 34px; } }
+
+@media (min-height: 100px) {
+  div.content pre > code {
+    height: 68px; } }
+
+@media (min-height: 150px) {
+  div.content pre > code {
+    height: 102px; } }
+
+@media (min-height: 200px) {
+  div.content pre > code {
+    height: 136px; } }
+
+@media (min-height: 250px) {
+  div.content pre > code {
+    height: 170px; } }
+
+@media (min-height: 300px) {
+  div.content pre > code {
+    height: 204px; } }
+
+@media (min-height: 350px) {
+  div.content pre > code {
+    height: 238px; } }
+
+@media (min-height: 400px) {
+  div.content pre > code {
+    height: 272px; } }
+
+@media (min-height: 450px) {
+  div.content pre > code {
+    height: 306px; } }
+
+@media (min-height: 500px) {
+  div.content pre > code {
+    height: 340px; } }
+
+@media (min-height: 550px) {
+  div.content pre > code {
+    height: 374px; } }
+
+@media (min-height: 600px) {
+  div.content pre > code {
+    height: 408px; } }
+
+@media (min-height: 650px) {
+  div.content pre > code {
+    height: 442px; } }
+
+@media (min-height: 700px) {
+  div.content pre > code {
+    height: 476px; } }
+
+@media (min-height: 750px) {
+  div.content pre > code {
+    height: 510px; } }
+
+@media (min-height: 800px) {
+  div.content pre > code {
+    height: 544px; } }
+
+@media (min-height: 850px) {
+  div.content pre > code {
+    height: 578px; } }
+
+@media (min-height: 900px) {
+  div.content pre > code {
+    height: 612px; } }
+
+@media (min-height: 950px) {
+  div.content pre > code {
+    height: 646px; } }
+
+@media (min-height: 1000px) {
+  div.content pre > code {
+    height: 680px; } }
+
+@media (min-height: 1050px) {
+  div.content pre > code {
+    height: 714px; } }
+
+@media (min-height: 1100px) {
+  div.content pre > code {
+    height: 748px; } }
+
+@media (min-height: 1150px) {
+  div.content pre > code {
+    height: 782px; } }
+
+@media (min-height: 1200px) {
+  div.content pre > code {
+    height: 816px; } }
+
+@media (min-height: 1250px) {
+  div.content pre > code {
+    height: 850px; } }
+
 body > article {
   opacity: 0.10; }
 
@@ -8964,7 +9064,8 @@ body > article.bespoke-parent {
   .bespoke-slide div.content {
     padding: 0; }
     .bespoke-slide div.content pre > code {
-      padding: 2rem; }
+      padding: 1rem;
+      overflow: auto; }
   .bespoke-slide .flex-title {
     width: 90%;
     text-align: center; }
