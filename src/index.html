@@ -341,11 +341,73 @@ angular
 <div class="tabs-content">
 
 <div class="content active" id="ui-bootstrap-1">
-<pre><code class="html"></code></pre>
+<pre><code class="html">&lt;div ng-controller=&quot;exampleCtrl as vm&quot; class=&quot;container&quot;&gt;
+  &lt;form&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;userName&quot;&gt;User Name&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;userName&quot;
+        placeholder=&quot;Enter user name.&quot; ng-model=&quot;vm.userName&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label&gt;Birth Date&lt;/label&gt;
+      &lt;div class=&quot;input-group&quot;&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot;
+          datepicker-popup=&quot;{{vm.dateFormat}}&quot;
+          ng-model=&quot;vm.birthDate&quot;
+          is-open=&quot;vm.isDateEditorOpened&quot;
+          datepicker-options=&quot;vm.dateOptions&quot;
+          ng-required=&quot;true&quot;
+          close-text=&quot;Close&quot; /&gt;
+        &lt;span class=&quot;input-group-btn&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;vm.openDateEditor($event)&quot;&gt;
+            &lt;i class=&quot;glyphicon glyphicon-calendar&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot; ng-click=&quot;vm.submitForm()&quot;&gt;Submit&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;vm.resetForm()&quot;&gt;Cancel&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;div collapse=&quot;vm.isCollapsed&quot;&gt;
+    &lt;div class=&quot;well well-lg&quot;&gt;
+      {{vm.userName}} was born on {{vm.birthDate | date:'dd-MMM-yyyy'}}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
 <div class="content" id="ui-bootstrap-2">
-<pre><code class="javascript"></code></pre>
+<pre><code class="javascript">class ExampleCtrl {
+
+  constructor() {
+    this.dateFormat = 'dd-MMMM-yyyy';
+    this.dateOptions = { };
+    this.isDateEditorOpened = false;
+    this.resetForm();
+  }
+
+  openDateEditor($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    this.isDateEditorOpened = true;
+  }
+
+  submitForm() {
+    this.isCollapsed = false;
+  }
+
+  resetForm() {
+    this.userName = "John Doe";
+    this.birthDate = new Date();
+    this.isCollapsed = true;
+  }
+}
+
+angular
+  .module('exampleApp', ['ui.bootstrap'])
+  .controller('exampleCtrl', [
+    ExampleCtrl
+  ]);</code></pre>
 </div>
 
 </div>
