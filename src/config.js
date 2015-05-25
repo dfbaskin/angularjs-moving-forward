@@ -18,6 +18,7 @@ System.config({
     "angular": "github:angular/bower-angular@1.3.15",
     "angular-animate": "github:angular/bower-angular-animate@1.3.15",
     "angular-aria": "github:angular/bower-angular-aria@1.3.15",
+    "angular-bootstrap": "github:angular-ui/bootstrap-bower@0.13.0",
     "angular-material": "github:angular/bower-material@0.9.4",
     "animate": "github:daneden/animate.css@3.2.6",
     "babel": "npm:babel-core@5.4.3",
@@ -28,6 +29,7 @@ System.config({
     "bespoke-hash": "github:markdalgleish/bespoke-hash@1.0.2",
     "bespoke-keys": "github:markdalgleish/bespoke-keys@1.0.0",
     "bespoke-scale": "github:markdalgleish/bespoke-scale@1.0.1",
+    "bootstrap": "github:twbs/bootstrap@3.3.4",
     "core-js": "npm:core-js@0.9.10",
     "css": "github:systemjs/plugin-css@0.1.11",
     "font-awesome": "npm:font-awesome@4.3.0",
@@ -87,6 +89,9 @@ System.config({
       "clean-css": "npm:clean-css@3.1.9",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0"
+    },
+    "github:twbs/bootstrap@3.3.4": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:amdefine@0.1.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
