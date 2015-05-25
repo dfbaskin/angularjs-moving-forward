@@ -250,14 +250,75 @@ angular.module('exampleApp', ['ngAnimate'])</code></pre>
                     <li class="tab-title"><a href="#mat-design-2">Script</a></li>
                 </ul>
 
-                <div class="tabs-content">
-                    <div class="content active" id="mat-design-1">
-<pre><code class="html"></code></pre>
-                    </div>
-                    <div class="content" id="mat-design-2">
-<pre><code class="javascript"></code></pre>
-                    </div>
-                </div>
+<div class="tabs-content">
+
+<div class="content active" id="mat-design-1">
+<pre><code class="html">&lt;div ng-controller=&quot;exampleCtrl as vm&quot;&gt;
+  &lt;md-content layout-padding&gt;
+    &lt;md-input-container&gt;
+      &lt;label&gt;Add Item&lt;/label&gt;
+      &lt;input type=&quot;text&quot;
+        ng-model=&quot;vm.newItem&quot;
+        ng-keypress=&quot;($event.which === 13) &amp;amp;&amp;amp; vm.addItem(vm.newItem)&quot; /&gt;
+    &lt;/md-input-container&gt;
+  &lt;/md-content&gt;
+
+  &lt;md-content layout-padding&gt;
+    &lt;md-list&gt;
+      &lt;md-list-item
+        ng-repeat=&quot;item in vm.items track by item.id&quot;&gt;
+        &lt;p&gt;{{ item.text }}&lt;/p&gt;
+        &lt;md-button class=&quot;md-secondary&quot;
+          aria-label=&quot;Remove item&quot;
+          ng-click=&quot;vm.removeItem(item)&quot;&gt;
+          &lt;md-icon md-svg-icon=&quot;delete&quot;&gt;&lt;/md-icon&gt;
+        &lt;/md-button&gt;
+      &lt;/md-list-item&gt;
+    &lt;/md-list&gt;
+  &lt;/md-content&gt;
+
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="content" id="mat-design-2">
+<pre><code class="javascript">class ExampleCtrl {
+
+  constructor() {
+    this.nextItemId = 0;
+    this.items = [];
+    ["one", "two", "three"].forEach(item => this.addItem(item));
+  }
+
+  addItem(text) {
+    this.items.push({
+      id: this.nextItemId += 1,
+      text: text,
+    });
+    this.newItem = "";
+  }
+
+  removeItem(item) {
+    var idx = this.items.indexOf(item);
+    if(idx !== -1) {
+      this.items.splice(idx, 1);
+    }
+  }
+}
+
+angular
+  .module('exampleApp', ['ngMaterial'])
+  .config([
+    '$mdIconProvider',
+    function($mdIconProvider) {
+      $mdIconProvider
+        .icon('delete', '/img/design/ic_delete_24px.svg');
+    }
+  ])
+  .controller('exampleCtrl', [
+    ExampleCtrl
+  ]);</code></pre>
+</div>
+</div>
 
             </div>
             <div class="source-right">
