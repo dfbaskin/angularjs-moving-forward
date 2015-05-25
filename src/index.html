@@ -433,6 +433,65 @@ angular
     </section>
 
     <section>
+        <div class="flex-title">
+            <h2>Validations</h2>
+        </div>
+        <div class="source-view">
+            <div class="source-left">
+                <ul class="tabs" data-tab>
+                    <li class="tab-title active"><a href="#validations-1">HTML</a></li>
+                </ul>
+
+<div class="tabs-content">
+
+<div class="content active" id="validations-1">
+<pre><code class="html">&lt;div ng-controller=&quot;exampleCtrl as vm&quot; class=&quot;container&quot;&gt;
+
+    &lt;form name=&quot;vm.userForm&quot; ng-submit=&quot;vm.submitForm()&quot;&gt;
+        &lt;div class=&quot;form-group&quot; ng-class=&quot;{'has-error': vm.userForm.userName.$invalid}&quot;&gt;
+            &lt;label for=&quot;userName&quot;&gt;User Name&lt;/label&gt;
+            &lt;input
+                    type=&quot;text&quot;
+                    class=&quot;form-control&quot;
+                    id=&quot;userName&quot; name=&quot;userName&quot;
+                    placeholder=&quot;Enter user name.&quot;
+                    ng-model=&quot;vm.userName&quot;
+                    required
+                    ng-pattern=&quot;/^\w+$/&quot;&gt;
+            &lt;span class=&quot;help-block&quot; ng-show=&quot;vm.userForm.userName.$error.required&quot;&gt;User name is required.&lt;/span&gt;
+            &lt;span class=&quot;help-block&quot; ng-show=&quot;vm.userForm.userName.$error.pattern&quot;&gt;User name must contain only letters and numbers.&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-group&quot; ng-class=&quot;{'has-error': vm.userForm.emailAddr.$invalid}&quot;&gt;
+            &lt;label for=&quot;emailAddr&quot;&gt;Email Address&lt;/label&gt;
+            &lt;input
+                    type=&quot;email&quot;
+                    class=&quot;form-control&quot;
+                    id=&quot;emailAddr&quot; name=&quot;emailAddr&quot;
+                    placeholder=&quot;Enter email address.&quot;
+                    ng-model=&quot;vm.emailAddr&quot;
+                    required&gt;
+            &lt;span class=&quot;help-block&quot; ng-show=&quot;vm.userForm.emailAddr.$error.required&quot;&gt;Email address is required.&lt;/span&gt;
+            &lt;span class=&quot;help-block&quot; ng-show=&quot;vm.userForm.emailAddr.$error.email&quot;&gt;Email address is not in correct format.&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;
+                ng-disabled=&quot;!vm.userForm.$valid&quot;&gt;
+            Submit
+        &lt;/button&gt;
+    &lt;/form&gt;
+
+&lt;/div&gt;</code></pre>
+</div>
+
+</div>
+
+            </div>
+            <div class="source-right">
+                <iframe src="examples/validations/validations.html"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section>
         <div class="text-center">
             <div class="panel callout radius">
                 <h3>https://github.com/dfbaskin/codestock-2015-angularjs-moving-forward</h3>
