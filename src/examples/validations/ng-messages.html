@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS Validations</title>
+</head>
+<body>
+
+    <div ng-controller="exampleCtrl as vm" class="container">
+
+        <form name="vm.userForm" ng-submit="vm.submitForm()">
+            <div class="form-group" ng-class="{'has-error': vm.userForm.userName.$invalid}">
+                <label for="userName">User Name</label>
+                <input
+                        type="text"
+                        class="form-control"
+                        id="userName" name="userName"
+                        placeholder="Enter user name."
+                        ng-model="vm.userName"
+                        required
+                        ng-pattern="/^\w+$/"
+                        ng-model-options="{ debounce: 1000 }"
+                        user-name-exists>
+                <div ng-messages="vm.userForm.userName.$error" class="help-block">
+                    <div ng-message="required">User name is required.</div>
+                    <div ng-message="pattern">User name must contain only letters and numbers.</div>
+                    <div ng-message="available">User name already exists.</div>
+                </div>
+                <div class="help-block" ng-if="vm.userForm.userName.$pending">Searching for existing user name ...</div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': vm.userForm.emailAddr.$invalid}">
+                <label for="emailAddr">Email Address</label>
+                <input
+                        type="email"
+                        class="form-control"
+                        id="emailAddr" name="emailAddr"
+                        placeholder="Enter email address."
+                        ng-model="vm.emailAddr"
+                        required>
+                <div ng-messages="vm.userForm.emailAddr.$error" class="help-block">
+                    <div ng-message="required">Email address is required.</div>
+                    <div ng-message="email">Email address is not in correct format.</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary"
+                    ng-disabled="!vm.userForm.$valid">
+                Submit
+            </button>
+        </form>
+
+    </div>
+
+<script src="/jspm_packages/system.js"></script>
+<script src="/config.js"></script>
+<script>
+    System.import('examples/validations/ng-messages');
+</script>
+
+</body>
+</html>

@@ -20,6 +20,7 @@ System.config({
     "angular-aria": "github:angular/bower-angular-aria@1.3.15",
     "angular-bootstrap": "github:angular-ui/bootstrap-bower@0.13.0",
     "angular-material": "github:angular/bower-material@0.9.4",
+    "angular-messages": "github:angular/bower-angular-messages@1.3.15",
     "animate": "github:daneden/animate.css@3.2.6",
     "babel": "npm:babel-core@5.4.3",
     "babel-runtime": "npm:babel-runtime@5.4.3",
