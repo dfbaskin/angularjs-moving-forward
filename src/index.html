@@ -440,6 +440,7 @@ angular
             <div class="source-left">
                 <ul class="tabs" data-tab>
                     <li class="tab-title active"><a href="#validations-1">HTML</a></li>
+                    <li class="tab-title"><a href="#validations-2">Script</a></li>
                 </ul>
 
 <div class="tabs-content">
@@ -447,39 +448,62 @@ angular
 <div class="content active" id="validations-1">
 <pre><code class="html">&lt;div ng-controller=&quot;exampleCtrl as vm&quot; class=&quot;container&quot;&gt;
 
-    &lt;form name=&quot;vm.userForm&quot; ng-submit=&quot;vm.submitForm()&quot;&gt;
-        &lt;div class=&quot;form-group&quot; ng-class=&quot;{'has-error': vm.userForm.userName.$invalid}&quot;&gt;
-            &lt;label for=&quot;userName&quot;&gt;User Name&lt;/label&gt;
-            &lt;input
-                    type=&quot;text&quot;
-                    class=&quot;form-control&quot;
-                    id=&quot;userName&quot; name=&quot;userName&quot;
-                    placeholder=&quot;Enter user name.&quot;
-                    ng-model=&quot;vm.userName&quot;
-                    required
-                    ng-pattern=&quot;/^\w+$/&quot;&gt;
-            &lt;span class=&quot;help-block&quot; ng-show=&quot;vm.userForm.userName.$error.required&quot;&gt;User name is required.&lt;/span&gt;
-            &lt;span class=&quot;help-block&quot; ng-show=&quot;vm.userForm.userName.$error.pattern&quot;&gt;User name must contain only letters and numbers.&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;form-group&quot; ng-class=&quot;{'has-error': vm.userForm.emailAddr.$invalid}&quot;&gt;
-            &lt;label for=&quot;emailAddr&quot;&gt;Email Address&lt;/label&gt;
-            &lt;input
-                    type=&quot;email&quot;
-                    class=&quot;form-control&quot;
-                    id=&quot;emailAddr&quot; name=&quot;emailAddr&quot;
-                    placeholder=&quot;Enter email address.&quot;
-                    ng-model=&quot;vm.emailAddr&quot;
-                    required&gt;
-            &lt;span class=&quot;help-block&quot; ng-show=&quot;vm.userForm.emailAddr.$error.required&quot;&gt;Email address is required.&lt;/span&gt;
-            &lt;span class=&quot;help-block&quot; ng-show=&quot;vm.userForm.emailAddr.$error.email&quot;&gt;Email address is not in correct format.&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;
-                ng-disabled=&quot;!vm.userForm.$valid&quot;&gt;
-            Submit
-        &lt;/button&gt;
-    &lt;/form&gt;
+        &lt;form name=&quot;vm.userForm&quot; ng-submit=&quot;vm.submitForm()&quot;&gt;
+            &lt;div class=&quot;form-group&quot; ng-class=&quot;{'has-error': vm.userForm.userName.$invalid}&quot;&gt;
+                &lt;label for=&quot;userName&quot;&gt;User Name&lt;/label&gt;
+                &lt;input
+                        type=&quot;text&quot;
+                        class=&quot;form-control&quot;
+                        id=&quot;userName&quot; name=&quot;userName&quot;
+                        placeholder=&quot;Enter user name.&quot;
+                        ng-model=&quot;vm.userName&quot;
+                        required
+                        ng-pattern=&quot;/^\w+$/&quot;
+                        ng-model-options=&quot;{ debounce: 1000 }&quot;
+                        user-name-exists&gt;
+                &lt;span class=&quot;help-block&quot; ng-if=&quot;vm.userForm.userName.$error.required&quot;&gt;User name is required.&lt;/span&gt;
+                &lt;span class=&quot;help-block&quot; ng-if=&quot;vm.userForm.userName.$error.pattern&quot;&gt;User name must contain only letters and numbers.&lt;/span&gt;
+                &lt;span class=&quot;help-block&quot; ng-if=&quot;vm.userForm.userName.$error.available&quot;&gt;User name already exists.&lt;/span&gt;
+                &lt;span class=&quot;help-block&quot; ng-if=&quot;vm.userForm.userName.$pending&quot;&gt;Searching for existing user name ...&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot; ng-class=&quot;{'has-error': vm.userForm.emailAddr.$invalid}&quot;&gt;
+                &lt;label for=&quot;emailAddr&quot;&gt;Email Address&lt;/label&gt;
+                &lt;input
+                        type=&quot;email&quot;
+                        class=&quot;form-control&quot;
+                        id=&quot;emailAddr&quot; name=&quot;emailAddr&quot;
+                        placeholder=&quot;Enter email address.&quot;
+                        ng-model=&quot;vm.emailAddr&quot;
+                        required&gt;
+                &lt;span class=&quot;help-block&quot; ng-if=&quot;vm.userForm.emailAddr.$error.required&quot;&gt;Email address is required.&lt;/span&gt;
+                &lt;span class=&quot;help-block&quot; ng-if=&quot;vm.userForm.emailAddr.$error.email&quot;&gt;Email address is not in correct format.&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;
+                    ng-disabled=&quot;!vm.userForm.$valid&quot;&gt;
+                Submit
+            &lt;/button&gt;
+        &lt;/form&gt;
 
-&lt;/div&gt;</code></pre>
+    &lt;/div&gt;</code></pre>
+</div>
+
+<div class="content" id="validations-2">
+<pre><code class="javascript">function AsyncUserNameValidator($q, $timeout) {
+
+    return {
+        require: 'ngModel',
+        link: function($scope, element, attrs, ngModel) {
+            ngModel.$asyncValidators.available = function(userName) {
+                // Simulate a call to a back-end service
+                return $timeout(() =>
+                    (userName.toLowerCase() !== "user") ?
+                        $q.when(true) :
+                        $q.reject(),
+                2000);
+            };
+        }
+    }
+}</code></pre>
 </div>
 
 </div>
