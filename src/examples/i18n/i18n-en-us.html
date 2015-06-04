@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Internationalization (i18n)</title>
+</head>
+<body>
+
+    <div ng-controller="exampleCtrl as vm" class="container">
+
+        <form>
+            <div class="form-group">
+                <label for="languageSelect">Select Language</label>
+                <div class="col-sm-12">
+                    <select id="languageSelect" class="form-control"
+                            ng-options="lang as lang.name for lang in vm.languages"
+                            ng-model="vm.selectedLanguage"
+                            ng-change="vm.changeLanguage()">
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <strong>Selected Language</strong>
+            </div>
+            <div class="col-lg-8">
+                {{vm.selectedLanguage.name}} ({{vm.selectedLanguage.isoCode}})
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <strong>Current Locale</strong>
+            </div>
+            <div class="col-lg-8">
+                {{vm.currentLocale.id}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <strong>Current Date/Time</strong>
+            </div>
+            <div class="col-lg-8">
+                {{vm.currentDateTime | date:'medium'}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <strong>Number</strong>
+            </div>
+            <div class="col-lg-8">
+                {{vm.amount | number:2}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <strong>Currency</strong>
+            </div>
+            <div class="col-lg-8">
+                {{vm.amount | currency}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <strong>Pluralization</strong>
+            </div>
+            <div class="col-lg-8">
+                <div>
+                    <label>
+                        <input type="radio" ng-model="vm.count" value="0"> zero
+                    </label>
+                    <label>
+                        <input type="radio" ng-model="vm.count" value="1"> one
+                    </label>
+                    <label>
+                        <input type="radio" ng-model="vm.count" value="10"> ten
+                    </label>
+                </div>
+                <div>
+                    <ng-pluralize
+                            count="vm.count"
+                            when= "{ 0: 'No children',
+                                 1: 'One child',
+                                 other: 'Many children'}">
+                    </ng-pluralize>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+<script src="/jspm_packages/system.js"></script>
+<script src="/config.js"></script>
+<script>
+
+    System.import('angular')
+        .then(function() {
+            return System.import('examples/i18n/angular-locale_en-us');
+        })
+        .then(function() {
+            return System.import('examples/i18n/i18n');
+        });
+
+</script>
+
+</body>
+</html>
