@@ -64,6 +64,7 @@
             <ul>
                 <li class="bullet">ECMAScript 6 (ES6)</li>
                 <li class="bullet">Standards: Modules and Promises</li>
+                <li class="bullet">Object.observe</li>
                 <li class="bullet">Web Components</li>
             </ul>
         </div>
@@ -503,7 +504,15 @@ angular
             };
         }
     }
-}</code></pre>
+}
+
+angular
+    .module('exampleApp', [])
+    .directive('userNameExists', [
+        '$q',
+        '$timeout',
+        AsyncUserNameValidator
+    ]);</code></pre>
 </div>
 
 </div>
