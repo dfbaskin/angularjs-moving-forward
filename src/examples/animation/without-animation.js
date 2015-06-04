@@ -1,6 +1,7 @@
 
 import angular from 'angular';
 
+//__display__
 class ExampleCtrl {
 
     constructor() {
@@ -24,6 +25,7 @@ class ExampleCtrl {
         }
     }
 }
+//__display__
 
 angular
     .module('exampleApp', [])

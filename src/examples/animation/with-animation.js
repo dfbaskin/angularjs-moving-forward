@@ -2,6 +2,7 @@
 import angular from 'angular';
 import ngAnimate from 'angular-animate';
 
+//__display__
 class ExampleCtrl {
 
     constructor() {
@@ -31,5 +32,6 @@ angular
     .controller('exampleCtrl', [
         ExampleCtrl
     ]);
+//__display__
 
 angular.bootstrap(document, ['exampleApp']);

@@ -7,10 +7,12 @@
 </head>
 <body>
 
+    <!--__display__-->
     <div ng-controller="exampleCtrl as vm">
 
         <div>
-            <input type="text" ng-model="vm.newItem" ng-keypress="($event.which === 13) &amp;&amp; vm.addItem(vm.newItem)" />
+            <input type="text" ng-model="vm.newItem"
+                   ng-keypress="($event.which === 13) &amp;&amp; vm.addItem(vm.newItem)" />
             <button type="button" ng-click="vm.addItem(vm.newItem)">Add</button>
         </div>
 
@@ -24,6 +26,7 @@
         </div>
 
     </div>
+    <!--__display__-->
 
 <script src="/jspm_packages/system.js"></script>
 <script src="/config.js"></script>

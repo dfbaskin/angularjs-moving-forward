@@ -1,4 +1,4 @@
-
+/*__display__*/
 .my-items.ng-enter, .my-items.ng-move {
     transition: 0.75s linear all;
     padding-left: 80px;
@@ -20,3 +20,4 @@
     opacity: 0;
     padding-left: 80px;
 }
+/*__display__*/
