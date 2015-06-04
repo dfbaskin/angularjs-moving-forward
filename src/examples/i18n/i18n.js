@@ -3,6 +3,7 @@ import "bootstrap/css/bootstrap.css!";
 
 import angular from 'angular';
 
+//__display__
 class ExampleCtrl {
 
     constructor($interval, $locale, $window) {
@@ -46,6 +47,7 @@ class ExampleCtrl {
         this.$window.location = './i18n-' + this.selectedLanguage.isoCode.toLowerCase() + '.html';
     }
 }
+//__display__
 
 angular
     .module('exampleApp', [])

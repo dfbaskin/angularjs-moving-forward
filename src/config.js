@@ -36,6 +36,7 @@ System.config({
     "font-awesome": "npm:font-awesome@4.3.0",
     "foundation": "github:zurb/bower-foundation@5.5.2",
     "highlightjs": "github:components/highlightjs@8.5.0",
+    "lodash": "npm:lodash@3.9.3",
     "github:angular/bower-angular-animate@1.3.15": {
       "angular": "github:angular/bower-angular@1.3.15"
     },
@@ -144,6 +145,9 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:lodash@3.9.3": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"

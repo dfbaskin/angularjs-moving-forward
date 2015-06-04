@@ -32,7 +32,8 @@
       "css": "github:systemjs/plugin-css@^0.1.10",
       "font-awesome": "npm:font-awesome@^4.3.0",
       "foundation": "github:zurb/bower-foundation@^5.5.2",
-      "highlightjs": "github:components/highlightjs@^8.5.0"
+      "highlightjs": "github:components/highlightjs@^8.5.0",
+      "lodash": "npm:lodash@^3.9.3"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",

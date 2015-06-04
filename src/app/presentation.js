@@ -4,7 +4,7 @@ import bespokeBullets from 'bespoke-bullets';
 import bespokeClasses from 'bespoke-classes';
 import bespokeHash from 'bespoke-hash';
 import bespokeKeys from 'bespoke-keys';
-import bespokeScale from 'bespoke-scale';
+//import bespokeScale from 'bespoke-scale';
 
 class Presentation {
 
