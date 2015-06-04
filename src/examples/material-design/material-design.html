@@ -6,12 +6,14 @@
 </head>
 <body>
 
+    <!--__display__-->
     <div ng-controller="exampleCtrl as vm">
 
         <md-content layout-padding>
             <md-input-container>
                 <label>Add Item</label>
-                <input type="text" ng-model="vm.newItem" ng-keypress="($event.which === 13) &amp;&amp; vm.addItem(vm.newItem)" />
+                <input type="text" ng-model="vm.newItem"
+                       ng-keypress="($event.which === 13) &amp;&amp; vm.addItem(vm.newItem)" />
             </md-input-container>
         </md-content>
 
@@ -19,7 +21,8 @@
             <md-list>
                 <md-list-item ng-repeat="item in vm.items track by item.id">
                     <p>{{ item.text }}</p>
-                    <md-button class="md-secondary" aria-label="Remove item" ng-click="vm.removeItem(item)">
+                    <md-button class="md-secondary" aria-label="Remove item"
+                               ng-click="vm.removeItem(item)">
                         <md-icon md-svg-icon="delete"></md-icon>
                     </md-button>
                 </md-list-item>
@@ -27,6 +30,7 @@
         </md-content>
 
     </div>
+    <!--__display__-->
 
 <script src="/jspm_packages/system.js"></script>
 <script src="/config.js"></script>

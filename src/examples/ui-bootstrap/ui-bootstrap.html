@@ -6,13 +6,18 @@
 </head>
 <body>
 
+    <!--__display__-->
     <div ng-controller="exampleCtrl as vm" class="container">
 
         <form>
+
             <div class="form-group">
                 <label for="userName">User Name</label>
-                <input type="text" class="form-control" id="userName" placeholder="Enter user name." ng-model="vm.userName">
+                <input type="text" class="form-control" id="userName"
+                       placeholder="Enter user name."
+                       ng-model="vm.userName">
             </div>
+
             <div class="form-group">
                 <label>Birth Date</label>
                 <div class="input-group">
@@ -24,15 +29,25 @@
                            ng-required="true"
                            close-text="Close" />
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openDateEditor($event)">
+                        <button type="button" class="btn btn-default"
+                                ng-click="vm.openDateEditor($event)">
                             <i class="glyphicon glyphicon-calendar"></i>
                         </button>
                     </span>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" ng-click="vm.submitForm()">Submit</button>
-            <button type="button" class="btn btn-default" ng-click="vm.resetForm()">Cancel</button>
+
+            <button type="submit" class="btn btn-primary"
+                    ng-click="vm.submitForm()">
+                Submit
+            </button>
+            <button type="button" class="btn btn-default"
+                    ng-click="vm.resetForm()">
+                Cancel
+            </button>
+
         </form>
+
         <div collapse="vm.isCollapsed">
             <div class="well well-lg">
                 {{vm.userName}} was born on {{vm.birthDate | date:'dd-MMM-yyyy'}}
@@ -40,6 +55,7 @@
         </div>
 
     </div>
+    <!--__display__-->
 
 <script src="/jspm_packages/system.js"></script>
 <script src="/config.js"></script>

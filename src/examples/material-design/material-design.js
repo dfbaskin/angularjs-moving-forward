@@ -5,6 +5,7 @@ import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
 import ngMaterial from 'angular-material';
 
+//__display__
 class ExampleCtrl {
 
     constructor() {
@@ -41,5 +42,6 @@ angular
     .controller('exampleCtrl', [
         ExampleCtrl
     ]);
+//__display__
 
 angular.bootstrap(document, ['exampleApp']);

@@ -3,6 +3,7 @@ import "bootstrap/css/bootstrap.css!";
 import angular from 'angular';
 import uiBootstrap from 'angular-bootstrap/ui-bootstrap-tpls';
 
+//__display__
 class ExampleCtrl {
 
     constructor() {
@@ -34,5 +35,6 @@ angular
     .controller('exampleCtrl', [
         ExampleCtrl
     ]);
+//__display__
 
 angular.bootstrap(document, ['exampleApp']);
