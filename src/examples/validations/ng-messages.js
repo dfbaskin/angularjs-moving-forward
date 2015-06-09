@@ -16,6 +16,7 @@ class ExampleCtrl {
 
 }
 
+//__display__
 function AsyncUserNameValidator($q, $timeout) {
 
     return {
@@ -43,5 +44,6 @@ angular
     .controller('exampleCtrl', [
         ExampleCtrl
     ]);
+//__display__
 
 angular.bootstrap(document, ['exampleApp']);
