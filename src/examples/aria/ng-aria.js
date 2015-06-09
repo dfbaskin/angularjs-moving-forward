@@ -34,8 +34,10 @@ function AsyncUserNameValidator($q, $timeout) {
     }
 }
 
+//__display__
 angular
     .module('exampleApp', ['ngMessages', 'ngAria'])
+//__display__
     .directive('userNameExists', [
         '$q',
         '$timeout',
