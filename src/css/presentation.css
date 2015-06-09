@@ -9061,6 +9061,11 @@ body > article.bespoke-parent {
     padding: 0 0 1rem 0; }
     .bespoke-slide ul.tabs li.tab-title > a {
       padding: 4px 20px; }
+  .bespoke-slide p {
+    font-size: 1.6rem;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom: 1rem; }
   .bespoke-slide div.content {
     padding: 0; }
     .bespoke-slide div.content pre > code {
