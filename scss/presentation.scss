@@ -83,6 +83,13 @@ body {
   }
   li.bullet {
     font-size: 2rem;
+    ul {
+      margin: 0 0 0 3rem;
+      li {
+        font-size: 1.8rem;
+        list-style: circle;
+      }
+    }
   }
 
   ul.tabs {

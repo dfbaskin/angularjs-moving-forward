@@ -9057,6 +9057,11 @@ body > article.bespoke-parent {
     margin-top: 2rem; }
   .bespoke-slide li.bullet {
     font-size: 2rem; }
+    .bespoke-slide li.bullet ul {
+      margin: 0 0 0 3rem; }
+      .bespoke-slide li.bullet ul li {
+        font-size: 1.8rem;
+        list-style: circle; }
   .bespoke-slide ul.tabs {
     padding: 0 0 1rem 0; }
     .bespoke-slide ul.tabs li.tab-title > a {
