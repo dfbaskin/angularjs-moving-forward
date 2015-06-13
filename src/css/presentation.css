@@ -9101,6 +9101,16 @@ body > article.bespoke-parent {
       height: 100%;
       border: none;
       padding: 2rem; }
+  .bespoke-slide .results-view {
+    width: 90%;
+    height: 80%;
+    overflow: hidden; }
+    .bespoke-slide .results-view iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      padding: 2rem;
+      overflow: scroll; }
   .bespoke-slide .three-view {
     width: 90%; }
     .bespoke-slide .three-view p {

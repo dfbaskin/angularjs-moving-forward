@@ -411,6 +411,40 @@
         </div>
     </section>
 
+    <section data-bespoke-hash="performance-tests">
+        <div class="flex-title">
+            <h2>Performance Tests (with Benchpress)</h2>
+        </div>
+        <div class="source-view">
+            <div class="source-left">
+                <ul class="tabs" data-tab>
+                    <li class="tab-title active"><a href="#perf-tests-1">Spec</a></li>
+                    <li class="tab-title"><a href="#perf-tests-2">HTML</a></li>
+                </ul>
+                <div class="tabs-content">
+                    <div class="content active" id="perf-tests-1">
+                        <source-code-view type="javascript" ref="tests/benchpress/benchmark.spec.js"></source-code-view>
+                    </div>
+                    <div class="content" id="perf-tests-2">
+                        <source-code-view type="html" ref="tests/benchpress/test-file.html"></source-code-view>
+                    </div>
+                </div>
+            </div>
+            <div class="source-right">
+                <iframe src="tests/benchpress/test-file.html"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section data-bespoke-hash="benchpress-results">
+        <div class="flex-title">
+            <h2>Benchpress Results</h2>
+        </div>
+        <div class="results-view">
+            <iframe src="tests/benchpress/example-output.txt"></iframe>
+        </div>
+    </section>
+
     <section data-bespoke-hash="closing">
         <div class="text-center">
             <h1>Thanks!</h1>

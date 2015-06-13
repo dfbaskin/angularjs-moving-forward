@@ -1,4 +1,4 @@
-
+//__display__
 var benchpress = require('benchpress');
 
 var runner = new benchpress.Runner([
@@ -27,3 +27,4 @@ describe('complex html', function() {
         }).then(done, done.fail);
     });
 });
+//__display__
