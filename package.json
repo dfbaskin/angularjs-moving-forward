@@ -5,6 +5,7 @@
   "author": "Dave Baskin",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^5.5.8",
     "express": "^4.12.3",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-sass": "^2.0.1",
