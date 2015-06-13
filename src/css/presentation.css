@@ -9101,6 +9101,22 @@ body > article.bespoke-parent {
       height: 100%;
       border: none;
       padding: 2rem; }
+  .bespoke-slide .three-view {
+    width: 90%; }
+    .bespoke-slide .three-view p {
+      font-size: 1.8rem;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #aaa; }
+    .bespoke-slide .three-view ul {
+      padding-left: 1rem; }
+      .bespoke-slide .three-view ul li {
+        font-size: 1.4rem;
+        list-style: disc; }
 
 .bespoke-active {
   z-index: 100; }
