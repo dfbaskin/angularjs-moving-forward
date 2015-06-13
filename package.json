@@ -9,7 +9,7 @@
     "gulp": "gulpjs/gulp#4.0",
     "gulp-sass": "^2.0.1",
     "jasmine-core": "^2.3.4",
-    "jspm": "^0.15.6",
+    "jspm": "^0.15.7",
     "karma": "^0.12.36",
     "karma-babel-preprocessor": "^5.2.1",
     "karma-chrome-launcher": "^0.1.12",
