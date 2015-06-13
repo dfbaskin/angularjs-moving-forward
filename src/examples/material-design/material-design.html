@@ -20,13 +20,16 @@
         <md-content layout-padding>
             <md-list>
                 <md-list-item ng-repeat="item in vm.items track by item.id">
-                    <p>{{ item.text }}</p>
-                    <md-button class="md-secondary" aria-label="Remove item"
-                               ng-click="vm.removeItem(item)">
-                        <md-icon md-svg-icon="delete"></md-icon>
-                    </md-button>
+                    {{ item.text }}
+                    <md-checkbox class="md-secondary" ng-model="item.isSelected" aria-label="Choose item"></md-checkbox>
                 </md-list-item>
             </md-list>
+            <md-button aria-label="Remove selected items"
+                       ng-disabled="!vm.areItemsSelected"
+                       ng-click="vm.removeSelectedItems()">
+                <md-icon md-svg-icon="delete"></md-icon>
+                Remove
+            </md-button>
         </md-content>
 
     </div>

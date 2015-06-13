@@ -14,6 +14,10 @@ class ExampleCtrl {
         ["one", "two", "three"].forEach(item => this.addItem(item));
     }
 
+    get areItemsSelected() {
+        return this.items.reduce((someSelected, item) => someSelected || item.isSelected, false);
+    }
+
     addItem(text) {
         this.items.push({
             id: this.nextItemId += 1,
@@ -22,11 +26,8 @@ class ExampleCtrl {
         this.newItem = "";
     }
 
-    removeItem(item) {
-        var idx = this.items.indexOf(item);
-        if(idx !== -1) {
-            this.items.splice(idx, 1);
-        }
+    removeSelectedItems() {
+        this.items = this.items.filter(item => !item.isSelected);
     }
 }
 
