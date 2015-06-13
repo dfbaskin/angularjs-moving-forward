@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Benchpress Test HTML Page</title>
+</head>
+<body>
+
+<button id="reset" onclick="reset()">Reset</button>
+<button id="fill" onclick="fill()">fill innerHTML</button>
+
+<div id="container"></div>
+
+<script>
+
+    var container = document.getElementById('container');
+    var complexHtmlString = '<div>' +
+            '<p>Hello</p>' +
+            '<ul>' +
+            '<li>One</li>' +
+            '<li>Two</li>' +
+            '<li>Three</li>' +
+            '<li>Four</li>' +
+            '</ul>' +
+            '</div>';
+
+    function reset() {
+        container.innerHTML = '';
+    }
+
+    function fill() {
+        container.innerHTML = complexHtmlString;
+    }
+
+</script>
+
+</body>
+</html>
