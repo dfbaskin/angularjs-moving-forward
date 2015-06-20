@@ -5,14 +5,8 @@ var express = require('express');
 var app = express();
 
 // Support routes
-app.use("/examples/routing/plants", function(req, res) {
-    res.sendFile(__dirname + '/src/examples/routing/original-router.html');
-});
-app.use("/examples/routing/plants/*", function(req, res) {
-    res.sendFile(__dirname + '/src/examples/routing/original-router.html');
-});
-app.use("/examples/routing/families", function(req, res) {
-    res.sendFile(__dirname + '/src/examples/routing/original-router.html');
+app.get(/^\/examples\/ng-router\/(plants(\/?)|families)/, function(req, res) {
+    res.sendFile(__dirname + '/src/examples/ng-router/original-router.html');
 });
 
 app.use("/tests", express.static("tests"));
