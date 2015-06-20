@@ -1,0 +1,11 @@
+<!--__display__-->
+<h2>Plants</h2>
+<input type="text" class="form-control" ng-model="family.searchText" placeholder="Search ..."/>
+<div class="list-group">
+    <a ng-repeat="plant in family.family.plants | filter:family.searchText | limitTo:50"
+       class="list-group-item"
+       ui-sref="plant-details({plantId: plant.symbol})">
+        {{plant.scientificName}} ({{plant.commonName}})
+    </a>
+</div>
+<!--__display__-->

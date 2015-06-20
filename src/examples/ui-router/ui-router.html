@@ -12,12 +12,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 well">
-                    <a href="plants">Plants</a> |
-                    <a href="families">Plant Families</a> |
+                    <a ui-sref="plants">Plants</a> |
+                    <a ui-sref="families">Plant Families</a> |
                     <em>(current route: {{vm.currentRoute}})</em>
                 </div>
             </div>
-            <ng-view></ng-view>
+            <div ui-view></div>
         </div>
     </div>
     <!--__display__-->

@@ -1,7 +1,7 @@
 
 import "bootstrap/css/bootstrap.css!";
 import angular from 'angular';
-import 'angular-route';
+import 'angular-ui-router';
 import _ from 'lodash';
 
 //__display__
@@ -84,56 +84,99 @@ class PlantsCtrl {
     }
 }
 
-class PlantFamiliesCtrl {
-    constructor(plantData) {
+class PlantDetailsCtrl {
+    constructor($state, plantData) {
         var self = this;
         plantData.fetchPlantData().then(function(data) {
-            self.data = data;
+            self.plant = _.find(data.plants, function(p) {
+                return p.symbol === $state.params.plantId;
+            });
         });
     }
 }
 
-class PlantDetailsCtrl {
-    constructor($routeParams, plantData) {
+class PlantFamiliesCtrl {
+    constructor($state, plantData) {
         var self = this;
+        self.$state = $state;
         plantData.fetchPlantData().then(function(data) {
-            self.plant = _.find(data.plants, function(p) {
-                return p.symbol === $routeParams.plantId;
+            self.data = data;
+        });
+    }
+    get familySearchText() {
+        return this.$state.current.data.familySearchText;
+    }
+    set familySearchText(value) {
+        this.$state.current.data.familySearchText = value;
+    }
+    get isFamilySearchActive() {
+        return this.$state.is("families");
+    }
+    goToFamilyState() {
+        this.$state.go('families');
+    }
+}
+
+class FamilyDetailsCtrl {
+    constructor($state, plantData) {
+        var self = this;
+        $state.current.data.familySearchText = $state.params.familyName;
+        plantData.fetchPlantData().then(function(data) {
+            self.family = _.find(data.families, function(f) {
+                return f.name === $state.params.familyName;
             });
         });
     }
 }
 
 angular
-    .module('exampleApp', ['ngRoute'])
+    .module('exampleApp', ['ui.router'])
     .service('plantData', ['$http', PlantsDataService])
     .controller('exampleCtrl', ['$location', 'plantData', ExampleCtrl])
     .controller('plantsCtrl', ['plantData', PlantsCtrl])
-    .controller('plantFamiliesCtrl', ['plantData', PlantFamiliesCtrl])
-    .controller('plantDetailsCtrl', ['$routeParams', 'plantData', PlantDetailsCtrl])
+    .controller('plantFamiliesCtrl', ['$state', 'plantData', PlantFamiliesCtrl])
+    .controller('plantDetailsCtrl', ['$state', 'plantData', PlantDetailsCtrl])
+    .controller('familyDetailsCtrl', ['$state', 'plantData', FamilyDetailsCtrl])
     .config([
-        '$routeProvider',
+        '$stateProvider',
+        '$urlRouterProvider',
         '$locationProvider',
-        function($routeProvider, $locationProvider) {
-            $routeProvider
-                .when('/plants', {
+        ($stateProvider, $urlRouterProvider, $locationProvider) => {
+            $urlRouterProvider.otherwise("/plants");
+            $stateProvider
+                .state('plants', {
+                    url: "/plants",
                     templateUrl: 'ui-router-plants.html',
                     controller: 'plantsCtrl',
                     controllerAs: 'plants'
                 })
-                .when('/plants/:plantId', {
+                .state('plant-details', {
+                    url: "/plants/:plantId",
                     templateUrl: 'ui-router-plant-detail.html',
                     controller: 'plantDetailsCtrl',
                     controllerAs: 'details'
                 })
-                .when('/families', {
+                .state('families', {
+                    url: "/families",
                     templateUrl: 'ui-router-families.html',
                     controller: 'plantFamiliesCtrl',
-                    controllerAs: 'families'
+                    controllerAs: 'families',
+                    data: {
+                        searchText: ""
+                    }
                 })
-                .otherwise('/plants');
+                .state('families.family', {
+                    url: "/families/:familyName",
+                    templateUrl: 'ui-router-family-detail.html',
+                    controller: 'familyDetailsCtrl',
+                    controllerAs: 'family'
+                });
             $locationProvider.html5Mode(true);
-        }]);
+        }])
 //__display__
+    .run(['$rootScope', '$log', ($rootScope, $log) => {
+        $rootScope.$on("$stateChangeSuccess", $log.info.bind($log));
+        $rootScope.$on("$stateChangeError", $log.error.bind($log));
+    }]);
 
 angular.bootstrap(document, ['exampleApp']);

@@ -6,7 +6,7 @@
         <div class="list-group">
             <a ng-repeat="plant in plants.data.plants | filter:plants.searchText | limitTo:50"
                class="list-group-item"
-               ng-href="plants/{{plant.symbol}}">
+               ui-sref="plant-details({plantId: plant.symbol})">
                 {{plant.scientificName}} ({{plant.commonName}})
             </a>
         </div>

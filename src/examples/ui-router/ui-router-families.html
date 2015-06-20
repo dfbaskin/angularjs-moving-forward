@@ -2,13 +2,16 @@
 <div class="row">
     <div class="col-sm-12">
         <h2>Plant Families</h2>
-        <input type="text" class="form-control" ng-model="families.searchText" placeholder="Search ..." />
-        <div class="list-group">
-            <span ng-repeat="family in families.data.families | filter:families.searchText | limitTo:50"
-               class="list-group-item">
+        <input type="text" class="form-control" ng-model="families.familySearchText" placeholder="Search ..."
+               ng-focus="families.goToFamilyState()" />
+        <div class="list-group" ng-if="families.isFamilySearchActive">
+            <a ng-repeat="family in families.data.families | filter:families.familySearchText | limitTo:50"
+               class="list-group-item"
+               ui-sref="families.family({familyName: family.name})">
                 {{family.name}}
-            </span>
+            </a>
         </div>
+        <div ui-view></div>
     </div>
 </div>
 <!--__display__-->

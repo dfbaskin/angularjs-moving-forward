@@ -21,7 +21,11 @@
             </div>
             <div class="form-group">
                 <label>Family</label>
-                <p class="form-control-static">{{details.plant.family}}</p>
+                <p class="form-control-static">
+                    <a ui-sref="families.family({familyName: details.plant.family})">
+                        {{details.plant.family}}
+                    </a>
+                </p>
             </div>
         </form>
     </div>
