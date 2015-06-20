@@ -170,6 +170,43 @@ angular
                     templateUrl: 'ui-router-family-detail.html',
                     controller: 'familyDetailsCtrl',
                     controllerAs: 'family'
+                })
+                .state('bing', {
+                    url: "/bing/:plantId",
+                    templateProvider: [
+                        '$stateParams',
+                        'plantData',
+                        ($stateParams, plantData) => {
+                            return plantData
+                                .fetchPlantData()
+                                .then(function(data) {
+                                    var plant = _.find(data.plants, function(p) {
+                                        return p.symbol === $stateParams.plantId;
+                                    });
+                                    if(!plant) {
+                                        return "<p>Not Found.</p>";
+                                    }
+                                    return [
+                                        '<iframe src="https://www.bing.com/images/search?q=',
+                                        encodeURI(plant.scientificName),
+                                        '"></iframe>'
+                                    ].join("");
+                                });
+                        }
+                    ]
+                })
+                .state('usda', {
+                    url: "/usda/:plantId",
+                    templateProvider: [
+                        '$stateParams',
+                        $stateParams => {
+                            return [
+                                '<iframe src="http://www.plants.usda.gov/core/profile?symbol=',
+                                $stateParams.plantId,
+                                '"></iframe>'
+                            ].join("");
+                        }
+                    ]
                 });
             $locationProvider.html5Mode(true);
         }])
