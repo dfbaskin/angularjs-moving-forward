@@ -1,19 +1,29 @@
 <!--__display__-->
-<div>
-    <h1>Plant Detail</h1>
-    <div>
-        <dl>
-            <dt>Symbol</dt>
-            <dd>{{details.plant.symbol}}</dd>
-            <dt>Synonym Symbol</dt>
-            <dd>{{details.plant.synonymSymbol}}</dd>
-            <dt>Scientific Name</dt>
-            <dd>{{details.plant.scientificName}}</dd>
-            <dt>Common Name</dt>
-            <dd>{{details.plant.commonName}}</dd>
-            <dt>Family</dt>
-            <dd>{{details.plant.family}}</dd>
-        </dl>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Plant Detail</h2>
+        <form>
+            <div class="form-group">
+                <label>Symbol</label>
+                <p class="form-control-static">{{details.plant.symbol}}</p>
+            </div>
+            <div class="form-group">
+                <label>Synonym Symbol</label>
+                <p class="form-control-static">{{details.plant.synonymSymbol}}</p>
+            </div>
+            <div class="form-group">
+                <label>Scientific Name</label>
+                <p class="form-control-static">{{details.plant.scientificName}}</p>
+            </div>
+            <div class="form-group">
+                <label>Common Name</label>
+                <p class="form-control-static">{{details.plant.commonName}}</p>
+            </div>
+            <div class="form-group">
+                <label>Family</label>
+                <p class="form-control-static">{{details.plant.family}}</p>
+            </div>
+        </form>
     </div>
 </div>
 <!--__display__-->

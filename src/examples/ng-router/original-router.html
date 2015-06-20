@@ -9,12 +9,16 @@
 
     <!--__display__-->
     <div ng-controller="exampleCtrl as vm" class="container">
-        <div>
-            <a href="plants">Plants</a> |
-            <a href="families">Plant Families</a> |
-            <em>(current route: {{vm.currentRoute}})</em>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 well">
+                    <a href="plants">Plants</a> |
+                    <a href="families">Plant Families</a> |
+                    <em>(current route: {{vm.currentRoute}})</em>
+                </div>
+            </div>
+            <ng-view></ng-view>
         </div>
-        <ng-view></ng-view>
     </div>
     <!--__display__-->
 

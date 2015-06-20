@@ -1,15 +1,15 @@
 <!--__display__-->
-<div>
-    <h1>Plants</h1>
-    <div>
-        <input type="text" ng-model="plants.searchText" />
-    </div>
-    <ul>
-        <li ng-repeat="plant in plants.data.plants | filter:plants.searchText | limitTo:100">
-            <a ng-href="plants/{{plant.symbol}}">
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Plants</h2>
+        <input type="text" class="form-control" ng-model="plants.searchText" placeholder="Search ..." />
+        <div class="list-group">
+            <a ng-repeat="plant in plants.data.plants | filter:plants.searchText | limitTo:50"
+               class="list-group-item"
+               ng-href="plants/{{plant.symbol}}">
                 {{plant.scientificName}} ({{plant.commonName}})
             </a>
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>
 <!--__display__-->
