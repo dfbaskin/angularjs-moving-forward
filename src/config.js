@@ -15,13 +15,14 @@ System.config({
 
 System.config({
   "map": {
-    "angular": "github:angular/bower-angular@1.4.0",
+    "angular": "github:angular/bower-angular@1.4.1",
     "angular-animate": "github:angular/bower-angular-animate@1.4.0",
     "angular-aria": "github:angular/bower-angular-aria@1.4.0",
     "angular-bootstrap": "github:angular-ui/bootstrap-bower@0.13.0",
     "angular-material": "github:angular/bower-material@0.9.8",
     "angular-messages": "github:angular/bower-angular-messages@1.4.0",
     "angular-mocks": "github:angular/bower-angular-mocks@1.4.0",
+    "angular-route": "github:angular/bower-angular-route@1.4.1",
     "animate": "github:daneden/animate.css@3.2.6",
     "babel": "npm:babel-core@5.5.7",
     "babel-runtime": "npm:babel-runtime@5.5.7",
@@ -39,16 +40,19 @@ System.config({
     "highlightjs": "github:components/highlightjs@8.5.0",
     "lodash": "npm:lodash@3.9.3",
     "github:angular/bower-angular-animate@1.4.0": {
-      "angular": "github:angular/bower-angular@1.4.0"
+      "angular": "github:angular/bower-angular@1.4.1"
     },
     "github:angular/bower-angular-aria@1.4.0": {
-      "angular": "github:angular/bower-angular@1.4.0"
+      "angular": "github:angular/bower-angular@1.4.1"
     },
     "github:angular/bower-angular-mocks@1.4.0": {
-      "angular": "github:angular/bower-angular@1.4.0"
+      "angular": "github:angular/bower-angular@1.4.1"
+    },
+    "github:angular/bower-angular-route@1.4.1": {
+      "angular": "github:angular/bower-angular@1.4.1"
     },
     "github:angular/bower-material@0.9.8": {
-      "angular": "github:angular/bower-angular@1.4.0",
+      "angular": "github:angular/bower-angular@1.4.1",
       "angular-animate": "github:angular/bower-angular-animate@1.4.0",
       "angular-aria": "github:angular/bower-angular-aria@1.4.0",
       "css": "github:systemjs/plugin-css@0.1.12"
@@ -133,9 +137,6 @@ System.config({
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "events": "github:jspm/nodelibs-events@0.1.1",
       "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.1"
-    },
-    "npm:core-js@0.9.10": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:core-js@0.9.16": {

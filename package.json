@@ -30,6 +30,7 @@
       "angular-material": "github:angular/bower-material@^0.9.8",
       "angular-messages": "github:angular/bower-angular-messages@^1.4.0",
       "angular-mocks": "github:angular/bower-angular-mocks@^1.4.0",
+      "angular-route": "github:angular/bower-angular-route@^1.4.1",
       "animate": "github:daneden/animate.css@^3.2.6",
       "bespoke": "github:markdalgleish/bespoke.js@^1.0.0",
       "bespoke-bullets": "github:markdalgleish/bespoke-bullets@^1.1.0",

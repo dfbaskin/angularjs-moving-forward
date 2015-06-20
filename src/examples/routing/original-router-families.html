@@ -1,0 +1,11 @@
+<div>
+    <h1>Plant Families</h1>
+    <div>
+        <input type="text" ng-model="families.searchText" />
+    </div>
+    <ul>
+        <li ng-repeat="family in families.data.families | filter:families.searchText | limitTo:100">
+            {{family.name}}
+        </li>
+    </ul>
+</div>

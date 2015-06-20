@@ -1,0 +1,13 @@
+<div>
+    <h1>Plants</h1>
+    <div>
+        <input type="text" ng-model="plants.searchText" />
+    </div>
+    <ul>
+        <li ng-repeat="plant in plants.data.plants | filter:plants.searchText | limitTo:100">
+            <a ng-href="plants/{{plant.symbol}}">
+                {{plant.scientificName}} ({{plant.commonName}})
+            </a>
+        </li>
+    </ul>
+</div>
