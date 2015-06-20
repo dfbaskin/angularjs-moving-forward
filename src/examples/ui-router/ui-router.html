@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS Original Router</title>
+    <base href="/examples/ui-router/">
+</head>
+<body>
+
+    <!--__display__-->
+    <div ng-controller="exampleCtrl as vm" class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 well">
+                    <a href="plants">Plants</a> |
+                    <a href="families">Plant Families</a> |
+                    <em>(current route: {{vm.currentRoute}})</em>
+                </div>
+            </div>
+            <ng-view></ng-view>
+        </div>
+    </div>
+    <!--__display__-->
+
+<script src="/jspm_packages/system.js"></script>
+<script src="/config.js"></script>
+<script>
+    System.import('examples/ui-router/ui-router');
+</script>
+
+</body>
+</html>

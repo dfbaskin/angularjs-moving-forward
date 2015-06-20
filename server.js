@@ -8,6 +8,9 @@ var app = express();
 app.get(/^\/examples\/ng-router\/(plants(\/?)|families)/, function(req, res) {
     res.sendFile(__dirname + '/src/examples/ng-router/original-router.html');
 });
+app.get(/^\/examples\/ui-router\/(plants(\/?)|families)/, function(req, res) {
+    res.sendFile(__dirname + '/src/examples/ui-router/ui-router.html');
+});
 
 app.use("/tests", express.static("tests"));
 app.use("/", express.static("src"));
