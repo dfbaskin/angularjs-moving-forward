@@ -19,8 +19,8 @@
     "karma-jspm": "^1.1.5"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/dfbaskin/codestock-2015-angularjs-moving-forward.git"
+    "type": "git",
+    "url": "https://github.com/dfbaskin/houston-techfest-2015-angularjs.git"
   },
   "jspm": {
     "directories": {

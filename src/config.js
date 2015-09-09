@@ -107,6 +107,9 @@ System.config({
     "github:twbs/bootstrap@3.3.4": {
       "jquery": "github:components/jquery@2.1.4"
     },
+    "github:zurb/bower-foundation@5.5.2": {
+      "jquery": "github:components/jquery@2.1.4"
+    },
     "npm:amdefine@0.1.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "module": "github:jspm/nodelibs-module@0.1.0",
