@@ -1,6 +1,6 @@
 # AngularJS Moving Forward
 
-Presentation for CodeStock 2015.
+Presentation for Atlanta Code Camp 2015.
 
 ## Prerequisites
 
